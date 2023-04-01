@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import { useTheme } from 'next-themes';
 
 const Footer: React.FC = () => {
+  const { theme } = useTheme();
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900">
+    <footer className={theme === 'light' ? 'bg-white' : 'bg-gray-900'}>
       <div className="container mx-auto py-5 flex flex-col md:flex-row items-center justify-between">
-        <div className="text-gray-500 dark:text-gray-400 text-sm mb-4 md:mb-0">
+        <div className={theme === 'light' ? 'bg-white' : 'bg-gray-900'}>
           © 2023 Web3-Ambassadors
         </div>
         <div className="flex items-center justify-center space-x-6">
@@ -23,7 +24,7 @@ const Footer: React.FC = () => {
       </div>
       <style jsx>{`
         footer {
-          border-top: 1px solid #e2e8f0;
+          border-top: 1px;
           position: absolute;
           bottom: 0;
           width: 100%;
