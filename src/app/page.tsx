@@ -10,12 +10,10 @@ import type { MyAppProps } from '../types/MyAppProps';
 
 function MyApp({ Component, pageProps }: MyAppProps) {
   const session = pageProps?.session;
-  console.log(session)
   return (
     <SessionProvider session={session}>
       <ThemeProvider attribute="class">
         <Navbar />
-       
       </ThemeProvider>
     </SessionProvider>
   );
