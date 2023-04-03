@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   const { theme } = useTheme();
   return (
     <footer className={theme === 'light' ? 'bg-white' : 'bg-gray-900'}>
-      <div className="container mx-auto py-5 flex flex-col md:flex-row items-center justify-between">
+      <div className="mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between">
         <div className={theme === 'light' ? 'bg-white' : 'bg-gray-900'}>
           © 2023 Web3-Ambassadors
         </div>
