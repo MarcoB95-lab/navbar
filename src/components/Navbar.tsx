@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1000);
+      setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener("resize", handleResize);
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
             Web3-Ambassadors
           </div>
         </Link>
-        <div className={`flex ${isMobile ? "my-3" : ""} gap-6 pl-0`}>
+        <div className={`flex ${isMobile ? "my-3 flex-col" : ""} gap-6 pl-0`}>
           <Link href="/jobs">
             <div className="text-white dark:text-gray-300 hover:text-indigo-600 flex font-serif text-lg">
               Jobs
