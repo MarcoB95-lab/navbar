@@ -30,9 +30,10 @@ const Navbar: React.FC = () => {
   };
   return (
     <header className="sticky top-0 z-50 bg-slate-700 dark:bg-gray-900 shadow-md">
-    <nav className="px-6 py-3 flex justify-between items-center w-full">
-      {isMobile && (
+   <nav className="px-6 py-3 flex justify-between items-center w-full" style={{minHeight: "3.5rem", display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
+    {isMobile && (
         <div className="ml-auto">
+          <div className="absolute items-center right-0">
           <button
             className="block md:hidden text-white focus:outline-none"
             onClick={handleMenuToggle}
@@ -42,10 +43,11 @@ const Navbar: React.FC = () => {
               className="w-6 h-6"
             />
           </button>
+          </div>
         </div>
       )}
       <div
-        className={`md:flex justify-between items-center space-x-3 w-full ${
+        className={`md:flex justify-between items-center  w-full ${
           showMenu && isMobile ? "block" : "hidden"
         }`}
       >
@@ -76,7 +78,7 @@ const Navbar: React.FC = () => {
             </div>
           </Link>
         </div>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 py-1">
           <ThemeSwitcher />
           {session && (
             <div className="flex items-center space-x-3">
